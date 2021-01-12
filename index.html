@@ -11,12 +11,23 @@
         <p>FemboiWare</p>
     </div>
     <a href="https://www.steamcommunity.com/groups/femboiware/" target="_blank"> Join_ </a>
-    <button onclick="darkMode()">Toggle Dark Mode</button>
+    <input type="button" id="changeText" onclick="darkMode();change()"></input>
 </body>
 <script>
     function darkMode() {
         var element = document.body;
+
         element.classList.toggle("dark-mode");
     }
+    function change() {
+        var elem = document.getElementById("changeText");
+        if (elem.value=="Toggle Dark Mode") elem.value = "Toggle Light Mode";
+        else elem.value = "Toggle Dark Mode";
+    }
+    function onSiteLoad() {
+        var elem = document.getElementById("changeText");
+        elem.value = "Toggle Dark Mode";
+    }
+    window.onload = onSiteLoad;
 </script>
 </html>
