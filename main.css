@@ -1,0 +1,79 @@
+body {
+    margin:0px;
+    height:50%;
+    display:flex;
+    justify-content:center;
+    background:#ddd;
+    color: black;
+}
+
+.dark-mode {
+    background-color: #1f1b24;
+    color: #ddd;
+}
+
+.text-typing {
+    padding:20px 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size:35px;
+    font-family:monospace;
+    animation: swip 3s steps(500,end) forwards;
+    animation-timing-function: ease-in-out;
+}
+.text-typing p {
+    margin:0px;
+    white-space:nowrap;
+    overflow:hidden;
+    animation:typing 4s steps(22,end) forwards,
+    blink 1s infinite;
+}
+a {
+    padding:20px 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0%;
+    font-size:35px;
+    font-family:monospace;
+    text-decoration: none;
+    color: inherit;
+    animation: fade 2s steps(22,end) forwards;
+    animation-delay: 4s;
+}
+
+button {
+    border: 2px solid transparent;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: inherit;
+    padding: 7px 14px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family:monospace;
+}
+
+@keyframes typing {
+    0% { width:0% }
+    100% { width:100% }
+}
+@keyframes blink {
+    0%,100% {
+    border-right:2px solid transparent;
+    }
+    50% {
+    border-right:2px solid black;
+    }
+}
+
+@keyframes swip {
+    0% { top: 50%; 
+        opacity: 0% }
+    100% { top:15%;opacity: 100%; }
+}
+@keyframes fade {
+    0% { opacity: 0%; }
+    100% { opacity: 100%; }
+}
